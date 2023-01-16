@@ -53,10 +53,10 @@ const Header = () => {
 
       <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded bg-gradient-to-r from-blue-500 via-pink-500 to-pink-300">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
-        <a href="https://flowbite.com/" className="flex items-center">
+        <Link href="/" className="flex items-center">
             <img src="https://flowbite.com/docs/images/logo.svg" className="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Prismly Blog</span>
-        </a>
+        </Link>
         <div 
             className="flex items-center md:order-2 "
             onClick={() => setToggleUser(!toggleUser)}
@@ -77,20 +77,20 @@ const Header = () => {
               <ul className="py-1" aria-labelledby="user-menu-button">
                 <div className={`${isAuthenticated ? "" : "hidden"}`}>
                   <li>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                    <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</Link>
                   </li>
                   <li>
                     <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
                   </li>
                   <li>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+                    <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</Link>
                   </li>
                 </div>
                 <li>
-                  <a onClick={signOut} href="#" className={`${isAuthenticated ? "" : "hidden"} block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white`}>Sign out</a>
+                  <Link onClick={signOut} href="#" className={`${isAuthenticated ? "" : "hidden"} block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white`}>Sign out</Link>
                 </li>
                 <li>
-                  <a onClick={() => router.push('/login')} href="#" className={`${isAuthenticated ? "hidden" : ""} block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white`}>Sign In</a>
+                  <Link onClick={() => router.push('/login')} href="#" className={`${isAuthenticated ? "hidden" : ""} block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white`}>Sign In</Link>
                 </li>
               </ul>
             </div>
