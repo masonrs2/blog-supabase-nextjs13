@@ -4,3 +4,8 @@ export function updateDateFormat(string) {
     
     return newDate
 }
+
+export const truncateText = (text, size) => {
+    if(text?.length > size) return text.slice(0, size) + "..."
+    else return text
+}
