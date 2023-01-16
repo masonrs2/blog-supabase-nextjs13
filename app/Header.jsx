@@ -54,7 +54,10 @@ const Header = () => {
       <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded bg-gradient-to-r from-blue-500 via-pink-500 to-pink-300">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link href="/" className="flex items-center">
-            <img src="https://flowbite.com/docs/images/logo.svg" className="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
+        <img 
+          src="https://img.icons8.com/dusk/64/000000/sound-recording-copyright.png" className="h-8 mr-3 sm:h-10" 
+          alt="logo" 
+        />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Prismly Blog</span>
         </Link>
         <div 
