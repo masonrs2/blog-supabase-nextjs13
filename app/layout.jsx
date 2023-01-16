@@ -6,8 +6,7 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <head />
-      <body className="bg-gradient-to-br from-gray-800 via-black to-gray-700 w-screen h-screen">
-
+      <body className="bg-gradient-to-br from-gray-800 via-black to-gray-700 w-screen h-full">
         <Header />
         {children}
       </body>

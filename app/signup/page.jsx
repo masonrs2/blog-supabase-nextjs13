@@ -30,6 +30,7 @@ const page = () => {
                 const resp = await supabase.from("users").insert({
                     userId: data.user?.id,
                     full_name: fullName,
+                    email: email,
                 })
             }
             if(data.error) throw data.error

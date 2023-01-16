@@ -3,10 +3,16 @@ import Testimonals from '../Testimonial'
 
 const page = () => {
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen flex flex-col font-urbanist">
+        <img src={"https://unsplash.com/photos/s5kTY-Ve1c0"} alt={"photo"} />
+
+        <h1 className="w-full flex justify-center text-4xl  font-semibold italic pt-20 text-gray-200 text-">Pricing & Subscriber Experiences</h1>
+
         <Testimonals />
-        <div className="w-full justify-center py-52 items-center flex flex-col sm:flex-row gap-4 mr-2 sm:mr-0 sm:gap-0">
-            <div className="flex flex-col gap-4 pt-20"></div>
+
+        <div className="w-full justify-center py-4 items-center flex flex-col sm:flex-row gap-4 mr-2 sm:mr-0 sm:gap-0">
+
+
                 <div className="w-full max-w-sm p-4 bg-white border rounded-lg shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700 mr-4 flex flex-col">
                 <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
                 <div className="flex items-baseline text-gray-900 dark:text-white">
