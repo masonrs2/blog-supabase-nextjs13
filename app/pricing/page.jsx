@@ -4,7 +4,6 @@ import Testimonals from '../Testimonial'
 const page = () => {
   return (
     <div className="w-screen flex flex-col font-urbanist">
-        <img src={"https://unsplash.com/photos/s5kTY-Ve1c0"} alt={"photo"} />
 
         <h1 className="w-full flex justify-center text-4xl  font-semibold italic pt-20 text-gray-200 text-">Pricing & Subscriber Experiences</h1>
 
