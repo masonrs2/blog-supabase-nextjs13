@@ -31,7 +31,7 @@ const page = () => {
     <div className="w-screen">
         <div className="w-full font-urbanist justify-center py-32 flex ">
             <div className="flex flex-col bg-gray-600/30 p-10 rounded-lg shadow-inner shadow-pink-400">
-                <div className="text-gray-400 mt-4 font-medium px-28 sm:px-40 md:px-60 lg:px-80 text-2xl pb-8 tracking-wide text-transparent flex w-full justify-center">
+                <div className="text-gray-400 mt-4 font-medium px-28 sm:px-40 md:px-60 lg:px-80 text-3xl pb-8 tracking-wide text-transparent flex w-full justify-center">
                     <h1 className=" font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-pink-300">Create a New Article</h1>
             </div>
                 
