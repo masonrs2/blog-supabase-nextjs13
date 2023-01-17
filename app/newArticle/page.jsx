@@ -1,15 +1,19 @@
 "use client"
 
+import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import supabase from '../../utils/supabaseClient'
 
 const page = () => {
     const [articleTitle, setArticleTitle] = useState('')
     const [articleMessage, setArticleMessage] = useState('')
+    const router = useRouter()
 
     async function createArticle() {
         try {
-            const { data, error } = await supabase.from('articles').insert({
+            const { data, error } = await supabase
+            .from('articles')
+            .insert({
                 article_title: articleTitle,
                 article_message: articleMessage,
             })
@@ -19,13 +23,14 @@ const page = () => {
                 console.log("data", data)
                 setArticleMessage('')
                 setArticleTitle('')
+
+                router.push("/blogPosts")
             }
 
         } catch (error) {
             console.log("error", error)
         }
     }
-
 
   return (
     <div className="w-screen">
@@ -35,7 +40,7 @@ const page = () => {
                     <h1 className=" font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-500 to-pink-300">Create a New Article</h1>
             </div>
                 
-                <form className="flex flex-col">
+                <form onSubmit={createArticle} className="flex flex-col">
                
                 <label name="articleTitle" htmlFor='articleTitle' className="text-gray-300 text-lg pb-1 font-medium tracking-wide">Article Title</label>
                   <input 

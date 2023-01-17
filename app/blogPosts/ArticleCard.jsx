@@ -5,6 +5,7 @@ import { MdOutlineReceipt } from 'react-icons/md'
 import supabase from '../../utils/supabaseClient'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Link from 'next/link'
 
 
 const ArticleCard = ({ article, index }) => {
@@ -69,7 +70,7 @@ const ArticleCard = ({ article, index }) => {
       }, [user])
     
   return (
-    <div className={`flex flex-col pb-5 md:w-[360px] lg:w-[500px] w-full  hover:border rounded-md cursor-pointer hover:border-blue-500  p-2 pt-5 px-4 font-urbanist`}>
+    <div className={`flex flex-col pb-5 md:w-[360px] lg:w-[500px] w-full  hover:border rounded-md hover:border-blue-500  p-2 pt-5 px-4 font-urbanist`}>
                             <img 
                                 src={article.image_url} 
                                 alt={article.id}
@@ -116,9 +117,9 @@ const ArticleCard = ({ article, index }) => {
                                 {truncateText(article?.article_message, 150)}
                             </p>
 
-
-
-                            <button className="bg-gradient-to-r from-blue-500 via-pink-500 to-pink-300 w-32 py-2 rounded-md mt-4 text-gray-200 hover:bg-opacity-75 active:bg-opacity-50 cursor-pointer">Read Blog</button>
+                            <Link href={`/article/${article?.id}`}>
+                                <button className="bg-gradient-to-r from-blue-500 via-pink-500 to-pink-300 w-32 py-2 rounded-md mt-4 text-gray-200 hover:bg-opacity-75 active:bg-opacity-50 cursor-pointer">Read Blog</button>
+                            </Link>
         </div>
   )
 }
