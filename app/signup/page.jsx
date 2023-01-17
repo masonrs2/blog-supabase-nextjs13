@@ -12,39 +12,39 @@ const page = () => {
     const [password, setPassword] = useState('')
     const [fullName, setFullName] = useState('')
     const router = useRouter()
+    async function signUpWithEmail() {
+      try {
+          if(email, password) { 
+              console.log("email", email)
+              console.log("password", password)
+              const { data, error } = await supabase.auth.signUp({
+                  email: email,
+                  password: password,
+              });
+  
+              if(error) throw error
+              const userId = data.user;
+  
+              if(data.user) {
+                  const resp = await supabase.from("users").insert({
+                      userId: data.user?.id,
+                      full_name: fullName,
+                      email: email,
+                  })
+              }
+              if(data.error) throw data.error
+  
+  
+              console.log("userId: ", userId);
+              router.push("/")
+          }
+  
+      } catch (error) {
+          console.log("error", error)
+      }
+   
+    } 
 
-  async function signUpWithEmail() {
-    try {
-        if(email, password) { 
-            console.log("email", email)
-            console.log("password", password)
-            const { data, error } = await supabase.auth.signUp({
-                email: email,
-                password: password,
-            });
-
-            if(error) throw error
-            const userId = data.user;
-
-            if(data.user) {
-                const resp = await supabase.from("users").insert({
-                    userId: data.user?.id,
-                    full_name: fullName,
-                    email: email,
-                })
-            }
-            if(data.error) throw data.error
-
-
-            console.log("userId: ", userId);
-            router.push("/")
-        }
-
-    } catch (error) {
-        console.log("error", error)
-    }
- 
-  } 
 
   async function logInWithGoogle() {
     try { 
