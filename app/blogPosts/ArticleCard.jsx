@@ -31,6 +31,7 @@ const ArticleCard = ({ article, index }) => {
                 date: updateDateFormat(article.created_at.split("T")[0]),
                 message: article.article_message,
                 userId: user?.userId,
+                articleId: article.id
             })
 
             if (error) throw error;

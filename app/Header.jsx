@@ -65,16 +65,27 @@ const Header = () => {
             className="flex items-center md:order-2 "
             
           >
-            <div className="flex gap-3">
+            <div className="flex gap-3 items-center">
 
-              <p className={`text-gray-300 flex items-center ${ isAuthenticated ? "" : "hidden" }`}>{user?.full_name}</p>
+           { isAuthenticated ? 
+           <Link href="/account">
+            <button type="button" class="text-gray-900 hover:text-white border hover:border-2 hover:border-blue-300 focus:ring-4 ring-blue-300 focus:outline-none focus:ring-blue-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:text-gray-300 dark:hover:text-white hover:outline-blue-500 dark:hover:bg-gray-600 hover:bg-gradient-to-br hover:from-gray-800 hover:via-black hover:to-gray-700 lg:flex hidden mt-1">{user?.full_name}</button>
+           </Link>
+           :
+           <Link href="/login">
+             <button type="button" class="text-gray-900 hover:text-white border hover:border-2 hover:border-blue-300 focus:ring-4 ring-blue-300 focus:outline-none focus:ring-blue-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:text-gray-300 dark:hover:text-white hover:outline-blue-500 dark:hover:bg-gray-600 hover:bg-gradient-to-br hover:from-gray-800 hover:via-black hover:to-gray-700 lg:flex hidden mt-1">Sign In</button>
+           </Link>
+           }
+            <div className="flex gap-3">
 
               <button onClick={() => setToggleUser(!toggleUser)} type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
 
                 <span className="sr-only">Open user menu</span>
-                <FaUserCircle size={30} />
-
+                  <FaUserCircle size={37} className="flex items-center " />
+            
               </button>
+              <div></div>
+            </div>
             </div>
             <div className={`z-50 ${toggleUser ? "" : "hidden"} my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600 absolute top-10 right-10 `} id="user-dropdown">
               
