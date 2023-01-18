@@ -1,9 +1,10 @@
 "use client"
 import { useEffect, useState } from 'react'
 import supabase from '../../../utils/supabaseClient'
-import { useRouter } from 'next/navigation'
-import { updateDateFormat } from '../../../assets/constants';
 import { use } from 'react';
+
+const page =  ({ params }) => {
+    const [article, setArticle] = useState()
 
     async function getBlog(id) {
     try {
@@ -16,15 +17,16 @@ import { use } from 'react';
 
         if(data) {
             console.log("data", data)
-            return data[0]
+            setArticle(data[0])
         }
     } catch (error) {
         console.log("error", error)
     }
     }
-const page =  ({ params }) => {
-    const article = use(getBlog(params.id))
 
+    useEffect(() => {
+        getBlog(params.id)
+    }, [params.id])
 
   return (
    
