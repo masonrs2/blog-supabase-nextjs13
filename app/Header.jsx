@@ -24,8 +24,9 @@ const Header = () => {
     async function getUser() {
       if(!user) {
         const user = await supabase.auth.getUser()
-        if (user) { 
+        if (user.data.user) { 
           setIsAuthenticated(true)
+          console.log("HeaderUser", user.data)
   
           const { data, error } = await supabase
                   .from("users")
