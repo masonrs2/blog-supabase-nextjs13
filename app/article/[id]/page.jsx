@@ -37,7 +37,7 @@ const page =  ({ params }) => {
 
                 <img className="w-full h-80 lg:xl-[500px] xl:h-[600px] 2xl:h-[700px] rounded-md mb-4 object-cover" src={article?.image_url} />
 
-                <p className="text-gray-300 italic text-sm flex w-full justify-start mb-6">Published:    {updateDateFormat(article?.created_at.split("T")[0])}
+                <p className="text-gray-300 italic text-sm flex w-full justify-start mb-6">Published:    {article?.created_at.split("T")[0]}
                 </p>
              
                    
